@@ -28,7 +28,7 @@ const Bookingscreen = () => {
       try {
         setloading(true);
         const data = (
-          await axios.post("/api/rooms/getroombyid", { roomid: id })
+          await axios.post("http://localhost:5000/api/rooms/getroombyid", { roomid: id })
         ).data;
         settotalamount(data.rentperday * totaldays);
         setroom(data);
@@ -56,7 +56,7 @@ const Bookingscreen = () => {
 
     try {
       setloading(true);
-      const result = await axios.post("/api/bookings/bookroom", bookingdetails);
+      const result = await axios.post("http://localhost:5000/api/bookings/bookroom", bookingdetails);
       setloading(false);
       swal.fire("Congratulations", "Room booked Successfully", "success").then(result => {window.location.href = '/profile'});
     } catch (error) {

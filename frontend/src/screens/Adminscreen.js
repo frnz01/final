@@ -68,7 +68,7 @@ export function Bookings() {
   useEffect(() => {
     async function getAllBookings() {
       try {
-        const response = await axios.get("/api/bookings/getallbookings");
+        const response = await axios.get("http://localhost:5000/api/bookings/getallbookings");
         const data = response.data;
         setbookings(data);
         setloading(false);
@@ -141,7 +141,7 @@ export function Rooms() {
   useEffect(() => {
     async function getAllRooms() {
       try {
-        const response = await axios.get("/api/rooms/getallrooms");
+        const response = await axios.get("http://localhost:5000/api/rooms/getallrooms");
         const data = response.data;
         setrooms(data);
         setloading(false);
@@ -155,7 +155,7 @@ export function Rooms() {
   }, []);
 
   function deleteRoom(roomid) {
-    axios.delete(`/api/rooms/deleteroom/${roomid}`)
+    axios.delete(`http://localhost:5000/api/rooms/deleteroom/${roomid}`)
       .then((response) => {
         console.log(response.data);
         // update the users list in your state
@@ -280,7 +280,7 @@ export function AddRooms() {
 
     try {
       setloading(true);
-      const response = await axios.post("/api/rooms/addroom", newroom);
+      const response = await axios.post("http://localhost:5000/api/rooms/addroom", newroom);
       const result = response.data;
       // const result = await(axios.post('/api/rooms/addroom', newroom)).data
       console.log(result);
@@ -433,7 +433,7 @@ export function EditRoom({ room, rooms, setrooms, show, handleClose }) {
   const handleUpdateRoom = (roomid) => {
     axios
       .put(
-        `/api/rooms/updateroom/${room._id}`,
+        `http://localhost:5000/api/rooms/updateroom/${room._id}`,
         updatedroom
       )
       .then((response) => {
@@ -631,7 +631,7 @@ export function Users() {
   useEffect(() => {
     async function getAllUsers() {
       try {
-        const response = await axios.get("/api/users/getallusers");
+        const response = await axios.get("http://localhost:5000/api/users/getallusers");
         const data = response.data;
         setusers(data);
         setloading(false);
@@ -648,7 +648,7 @@ export function Users() {
     setUpdateState(id);
   }
   function deleteUser(userid) {
-    axios.delete(`/api/users/deleteuser/${userid}`)
+    axios.delete(`http://localhost:5000/api/users/deleteuser/${userid}`)
       .then((response) => {
         console.log(response.data);
         // update the users list in your state
@@ -740,7 +740,7 @@ export function EditUser({ user, users, setusers, show, handleClose }) {
   const handleUpdateUser = () => {
     axios
       .put(
-        `/api/users/updateuser/${user._id}`,
+        `http://localhost:5000/api/users/updateuser/${user._id}`,
         updateduser
       )
       .then((response) => {
@@ -929,7 +929,7 @@ export function AddUsers() {
 
     try {
       setloading(true);
-      const response = await axios.post("/api/users/register", newuser);
+      const response = await axios.post("http://localhost:5000/api/users/register", newuser);
       const result = response.data;
       // const result = await(axios.post('/api/rooms/addroom', newroom)).data
       console.log(result);

@@ -1,4 +1,5 @@
 const express = require('express');
+const cors = require('cors');
 
 const app = express();
 
@@ -10,6 +11,12 @@ const usersRoute = require('./routes/usersRoute')
 const bookingsRoute = require('./routes/bookingsRoute')
 
 app.use(express.json());
+app.use(cors());
+
+// app.use(express.static(path.join(__dirname, '.frontend/build')));
+// app.get()
+
+
 
 app.use('/api/rooms', roomsRoute);
 app.use('/api/users', usersRoute);

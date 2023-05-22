@@ -30,7 +30,7 @@ const Registerscreen = () => {
         }
         try {
           setloading(true);
-          const result = await axios.post('/api/users/register', user).data
+          const result = await axios.post('http://localhost:5000/api/users/register', user).data
           setsuccess(true);
           setloading(false);
 

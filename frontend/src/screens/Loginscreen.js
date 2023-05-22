@@ -24,7 +24,7 @@ const Loginscreen = () => {
 
       //   window.location.href ='/home'
       setloading(true);
-      const response = await axios.post("/api/users/login", user);
+      const response = await axios.post("http://localhost:5000/api/users/login", user);
       const result = response.data;
       setloading(false);
       if (result) { //result && result.user

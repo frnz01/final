@@ -7,6 +7,9 @@ const { v4: uuidv4 } = require("uuid");
 const stripe = require("stripe")(
   "sk_test_51MzzS9JdQqwRgXNg2NOJ6M60jX6Csz4AHUxmiYDgaveWKXCFqDMH4quKraAcwiqH0pLPjkD8trO6285A8IwFyyuW00uAIgZ861"
 );
+const cors = require('cors');
+router.use(cors());
+
 
 router.post("/bookroom", async (req, res) => {
   const { room, userid, fromdate, todate, totalamount, totaldays, token } =

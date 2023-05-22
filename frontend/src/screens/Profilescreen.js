@@ -49,7 +49,7 @@ export function MyBookings() {
         // const rooms = await axios.post('/api/getbookingsbyuserid', {userid: user._id}).data
         // console.log(rooms)
         setloading(true);
-        const response = await axios.post("/api/bookings/getbookingsbyuserid", {
+        const response = await axios.post("http://localhost:5000/api/bookings/getbookingsbyuserid", {
           userid: user._id,
         });
         const data = response.data;
@@ -68,7 +68,7 @@ export function MyBookings() {
   async function cancelBooking(bookingid, roomid) {
     try {
       setloading(true);
-      const result = await axios.post("/api/bookings/cancelbooking", {
+      const result = await axios.post("http://localhost:5000/api/bookings/cancelbooking", {
         bookingid,
         roomid,
       }).data;
