@@ -15,4 +15,16 @@ connection.on('connected', ()=>{
     console.log('Mongo DB Connection Successfull')
 })
 
+// mongoose
+//   .connect(process.env.DB)
+//   .then(() => {
+//     //listen for requests
+//     app.listen(process.env.PORT, () => {
+//       console.log(`Connected to db and listening to ${process.env.PORT}`);
+//     });
+//   })
+//   .catch((error) => {
+//     console.log(error);
+//   });
+
 module.exports = mongoose
