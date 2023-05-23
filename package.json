@@ -12,6 +12,7 @@
   "license": "ISC",
   "dependencies": {
     "@stripe/stripe-js": "github:stripe/stripe-js",
+    "cors": "^2.8.5",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
     "moment": "^2.29.4",
@@ -22,5 +23,13 @@
     "uuid": "^9.0.0"
   },
   "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/frnz01/final.git"
+  },
+  "bugs": {
+    "url": "https://github.com/frnz01/final/issues"
+  },
+  "homepage": "https://github.com/frnz01/final#readme",
   "description": ""
 }
